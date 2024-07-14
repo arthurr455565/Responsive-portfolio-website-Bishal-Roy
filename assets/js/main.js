@@ -30,15 +30,30 @@ function linkAction(){
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*==================== ACCORDION SKILLS ====================*/
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Skills section loaded');
+    // You can add more interactive functionality here if needed
+});
 
 
 /*==================== QUALIFICATION TABS ====================*/
+// Example JavaScript functionality
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Education section loaded');
+    // Add more interactive functionality here if needed
+});
 
 
 /*==================== SERVICES MODAL ====================*/
 
 
 /*==================== PORTFOLIO SWIPER  ====================*/
+// Example JavaScript functionality
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Portfolio section loaded');
+});
+
+/*======================Projects=========================*/
 
 
 /*==================== TESTIMONIAL ====================*/

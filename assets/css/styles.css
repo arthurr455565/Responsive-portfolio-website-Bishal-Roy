@@ -353,10 +353,113 @@ img {
 }
 
 /*==================== SKILLS ====================*/
+#skills {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background for the section */
+}
 
+#skills h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  width: calc(33% - 30px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card h3 {
+  margin-top: 0;
+}
+
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-card ul li {
+  padding: 5px 0;
+}
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .skill-card {
+      width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card {
+      width: calc(100% - 30px);
+      margin: 10px 0;
+  }
+}
 /*==================== QUALIFICATION ====================*/
+#education h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
 
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.edu-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  padding: 20px;
+  width: calc(33% - 30px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.edu-card p {
+  margin: 5px 0;
+}
+
+.edu-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .edu-card {
+      width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .edu-card {
+      width: calc(100% - 30px);
+      margin: 10px 0;
+  }
+}
 
 /*==================== SERVICES ====================*/
 
@@ -365,15 +468,134 @@ img {
 
 
 /*==================== PORTFOLIO ====================*/
+#portfolio h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+#portfolio {
+  padding: 50px 0;
+}
 
+.work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.work {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 255, 0.51), #007BFF);
+  border-radius: 10px;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer a {
+  margin-top: 20px;
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.work:hover img {
+  transform: scale(1.1);
+}
+
+.work:hover .layer {
+  height: 100%;
+}
 
 /*==================== PROJECT IN MIND ====================*/
-
 
 /*==================== TESTIMONIAL ====================*/
 
 
 /*==================== CONTACT ME ====================*/
+.contact__container{
+  row-gap: 3rem;
+
+}
+.contact__information{
+  display: flex;
+  margin-bottom: var(--mb-2);
+}
+.contact__icon{
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-right: var(--mb-0-75);
+}
+.contact__title{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+}
+
+.contact__subtitle{
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.contact__content{
+  background-color: var(--input--color);
+  border-radius: .5rem;
+  padding: .75rem 1rem .25rem;
+}
+
+.contact__label{
+  font-size: var(--small-font-size);
+  color: var(--title-color);
+}
+
+.contact__input{
+  width: 100%;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  border: none;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  padding: .25rem .5rem .5rem 0;
+  outline: none;
+
+}
 
 
 /*==================== FOOTER ====================*/
