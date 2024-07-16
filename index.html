@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
         
         <!--==================== SWIPER CSS ====================-->
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
         
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="./assets/css/styles.css">
@@ -19,7 +19,7 @@
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
-                <a href="#" class="nav__logo">Bishal</a>
+                <img src="./assets/img/Logo.png" class="nav__logo"></a>
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
                         <li class="nav__item">
@@ -38,13 +38,8 @@
                                 <i class="uil uil-file-alt nav__icon"></i> Skills
                             </a>
                         </li><li class="nav__item">
-                            <a href="#project" class="nav__link">
-                                <i class="uil uil-briefcase-alt nav__icon"></i> project
-
-                            </a>
-                        </li><li class="nav__item">
                             <a href="#portfolio" class="nav__link">
-                                <i class="uil uil-scenery nav__icon"></i>Portfolio
+                                <i class="uil uil-briefcase-alt nav__icon"></i>Projects
 
                             </a>
                         </li><li class="nav__item">
@@ -265,28 +260,29 @@
                         </div>
                     </div>
                    </div> 
-                   <form action="" class="contact__form grid">
+                   <form name="submit-to-google-sheet" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                          <label for="" class="contact__label">Name</label>
-                          <input type="text" class="contact__input" required>
+                          <label class="contact__label">Name</label>
+                          <input type="text" class="contact__input" name="Name" required>
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Your Email</label>
-                            <input type="email" class="contact__input" required>
+                            <label class="contact__label">Your Email</label>
+                            <input type="email" class="contact__input" name="Email" required>
                           </div>
                     </div>
                     <div class="contact__content">
-                        <label for="" class="contact__label">Message</label>
-                        <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                        <label class="contact__label">Message</label>
+                        <textarea name="Message" id="" cols="0" rows="7" class="contact__input"></textarea>
                       </div>
 
                       <div>
-                        <a href="#" class="button button--flex">Send Message<i class="uil uil-message button__icon"></i>
+                        <button class="button button--flex" type="submit">Send Message<i class="uil uil-message button__icon"></i>
                             
                         </a>
                       </div>
                    </form>
+                   <span id="msg"></span>
                 </div>
             </section>
         </main>
@@ -325,5 +321,33 @@
 
         <!--==================== MAIN JS ====================-->
         <script src="./assets/js/main.js"></script>
+
+        
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby4JPIi_X2SKaR2jtiSoV1YRI1J7fC42nV2BNcrRFiGFnABRWJb7SwVqbN2HkhDaL0knA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully. Thank you!"
+            msg.style.color = "green"
+            msg.style.fontSize = "20px"
+            msg.style.fontWeight = "bold"
+            msg.style.padding = "10px"
+            msg.style.marginTop = "10px"
+            msg.style.marginBottom = "10px"
+            msg.style.borderRadius = "10px"
+            msg.style.display = "block"
+            msg.style.textAlign = "center"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
     </body>
 </html>
